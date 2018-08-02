@@ -1,0 +1,54 @@
+/* set defoult rank */
+.rank0::after, .rank0::before {
+  content: "A";
+}
+
+.rank1::after, .rank1::before {
+  content: "2";
+}
+
+.rank2::after, .rank2::before {
+  content: "3";
+}
+
+.rank3::after, .rank3::before {
+  content: "4";
+}
+
+.rank4::after, .rank4::before {
+  content: "5";
+}
+
+.rank5::after, .rank5::before {
+  content: "6";
+}
+
+.rank6::after, .rank6::before {
+  content: "7";
+}
+
+.rank7::after, .rank7::before {
+  content: "8";
+}
+
+.rank8::after, .rank8::before {
+  content: "9";
+}
+
+.rank9::after, .rank9::before {
+  content: "10";
+}
+
+.rank10::after, .rank10::before {
+  content: "J";
+}
+
+.rank11::after, .rank11::before {
+  content: "Q";
+}
+
+.rank12::after, .rank12::before {
+  content: "K";
+}
+
+
