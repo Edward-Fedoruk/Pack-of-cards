@@ -10,7 +10,7 @@ const curry = fn => {
 
 const incStyleProp = start => { 
   let cashValue = start;
-
+ 
   return curry((i, p, e, s = "") => 
     e.style[p] = (parseInt(e.style[p]) <= cashValue)
       ? `${cashValue = cashValue + i}` + s 

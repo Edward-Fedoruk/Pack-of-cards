@@ -1,5 +1,5 @@
 // drag'n drop for card
-const incCardZIndex = incStyleProp(0)(1, "zIndex");
+const incCardZIndex = incStyleProp(CARDS_AMOUNT)(1, "zIndex");
 const setPos = curry((card, e) => {
   setStyle(
     "transform", 

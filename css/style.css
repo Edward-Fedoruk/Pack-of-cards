@@ -26,7 +26,7 @@ html {
 }
 
 .animate {
-  transition: transform .4s;
+  transition: transform .3s;
   transform: translate(200px, 300px);
   will-change: transition , transform;
 }
@@ -54,21 +54,30 @@ html {
 .control {
   position: absolute;
   top: 0;
+  left: 0;
   width: 100%;
   display: flex;
   justify-content: center;
+  background-color: #334d41;
+  margin: 0;
+  height: 30px;
 }
 
 .control button {
   background: none;
   border: 1px solid #fff;
   color: #fff;
-  width: 5%;
-  line-height: 20px;
+  width: 5vw;
+  margin-right: 10px;
+  margin-top: 7px;
+  margin-bottom: 7px;
+  height: 21px;
 }
 .control button:focus {
   outline: none;
 } 
 .control button:hover {
-  background-color: #000;
+  background-color: #fff;
+  cursor: pointer;
+  color: #334d41;
 } 
