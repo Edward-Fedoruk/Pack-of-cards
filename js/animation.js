@@ -1,7 +1,6 @@
 const toggleClass = (className) => map(toggle(className), [...takeElem(".card")]);
 const initZIndex = map((el, i) => setStyle("zIndex", `${i}`, el));
 
-
 const posX = takeElem("html")[0].offsetWidth / 2 - 38;
 const posY = takeElem("html")[0].offsetHeight / 2.5;
  
@@ -55,4 +54,3 @@ const shuffleDeck = () => {
     setStyle("zIndex", setRandZindex(1 + CARDS_AMOUNT)(arr), el), [...takeElem(".card")]);
   setTimeout(() => animate(0), 1000)
 }
-

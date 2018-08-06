@@ -1,9 +1,10 @@
+// inserting cards in DOM
+map(el => takeElem("#deck")[0].append(el), deck);
+
 const cardListener = listener(".card");
 
 cardListener("click")(
-  e => {
-    toggle("back", e.target)
-  }
+  e => toggle("back", e.target)
 );
 
 cardListener("mousedown")(e => {
@@ -15,10 +16,6 @@ cardListener("mousedown")(e => {
     e.target.classList.add("animate")
   });
 }); 
-
-// addListener([takeElem(".card")[CARDS_AMOUNT]], "webkitTransitionEnd",
-//   // () => animate(0)
-// )
 
 const flipDeck = () => map(toggle("back"), [...takeElem(".card")]);
 addListener(takeElem(".flip"), "click", flipDeck);

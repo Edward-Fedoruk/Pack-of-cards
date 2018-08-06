@@ -1,27 +1,11 @@
 // helper functions
 const curry = fn => {
   const arity = fn.length;
-
   return function $curry(...args) {
     if (args.length < arity) return $curry.bind(null, ...args);
     return fn.call(null, ...args);
   };
 };
-
-const incStyleProp = start => { 
-  let cashValue = start;
- 
-  return curry((i, p, e, s = "") => 
-    e.style[p] = (parseInt(e.style[p]) <= cashValue)
-      ? `${cashValue = cashValue + i}` + s 
-      : `${cashValue}` + s); 
-};
-
-const iterate = curry((n, fn, v) => {
-  const res = [];
-  for(let i = 0; i < n; i++) res.push(fn.apply(null, v.concat(i)));
-  return res;
-});
 
 const map = curry((fn, f) => f.map(fn));
 const compose = (...fns) => (...args) => fns.reduceRight((res, fn) => [fn.call(null, ...res)], args)[0];
@@ -44,7 +28,7 @@ const SUITS = [ // all suits
   "hearts",
   "clubs",
   "diamonds"
-]
+];
 
 // set listener for element
 const takeElem = takeDomElements(document);
