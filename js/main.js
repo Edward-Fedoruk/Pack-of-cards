@@ -27,6 +27,15 @@ addListener(takeElem(".shuffle"), "click", () => {
   shuffleDeck();
 });
 
+addListener(takeElem(".sort"), "click", () => {
+  animateShuffle(0)
+  initZIndex([...takeElem(".card")]);
+  animate(0);
+});
+
+// setting initial z-index for cards
+initZIndex([...takeElem(".card")]);
+
 // initial animation
 toggleClass("animate");
 animate(0);
