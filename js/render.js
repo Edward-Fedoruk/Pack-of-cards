@@ -1,16 +1,16 @@
-const newAtr = compose(setAtr, createAtr);
-const setName = compose(map(setAtr), iterate(SUIT_AMOUNT, creatElem));
-
-const addAtr =(atname, atval = "") => 
-  (el, i) => setAtrToNode(el, newAtr(atname)(atval + `${i}`));
-
 const iterate = curry((n, fn, v) => {
   const res = [];
   for(let i = 0; i < n; i++) res.push(fn.apply(null, v.concat(i)));
   return res;
 });
 
-const addSuit = (suit, i) =>  map(addAtr("class", suit[i]), setName(["DIV"]));
+const newAtr = compose(setAtr, createAtr);
+const setName = compose(map(setAtr), iterate(SUIT_AMOUNT, creatElem));
+
+const addAtr =(atname, atval = "") => 
+  (el, i) => setAtrToNode(el, newAtr(atname)(atval + `${i}`));
+
+const addSuit = (suit, i) =>  map(addAtr("class", suit[i]), setName(["DIV"]))
 const cards = iterate(SUITS.length, addSuit , [SUITS]);
 
 const addRank = (el, i) => {
@@ -25,4 +25,4 @@ const addRank = (el, i) => {
 
 const deck = cards.reduce((prev, curr) => concat(prev, map(addRank, curr)), []);
 
-map(addAtr("data-number"), deck);
+map(addAtr("data-number"), deck)
